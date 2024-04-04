@@ -9,15 +9,14 @@ for i = 1:len
          xlabel('X');
          ylabel('Y');
          zlabel('Z');
-         hold on;
     end
     
-    [point1_trans,point2_trans,point3_trans,point4_trans]=drone(phi(i),theta(i),psai(i)); 
+    [point1_trans,point2_trans,point3_trans,point4_trans]=Drone_module(phi(i),theta(i),psai(i)); 
     
     % Ve quy dao cho UAV
     % ========================================================
     try
-        delete(h1);delete(h2);delete(point);
+        delete(h1);delete(h2);
         plot3([x(i-1),x(i)],[y(i-1),y(i)],[z(i-1),z(i)],'-', 'LineWidth', 2, 'Color','b') 
         hold on;
     catch
@@ -30,8 +29,8 @@ for i = 1:len
     
     h2 = plot3([x(i)+point3_trans(1),x(i)+point4_trans(1)],[y(i)+point3_trans(2),y(i)+point4_trans(2)],...
         [z(i)+point3_trans(3),z(i)+point4_trans(3)],"LineWidth",3,"Color","g");
-    
-   % set(gca,'ztick',0:20:z(i)+5)
+        
+    set(gca,'ztick',0:20:z(i)+5)
 end
 
 %Plot x,y,z out - ref
