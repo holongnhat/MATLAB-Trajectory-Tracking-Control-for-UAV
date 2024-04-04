@@ -1,3 +1,3 @@
-# BTL Nhập môn điều khiển thông minh 
+# BTL NMĐKTM
+ 
 
-# Made by Ho Long Nhat 
